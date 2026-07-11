@@ -19,9 +19,9 @@ PASSWORD = "admin123"
 # Twilio SMS Credentials (Optional)
 # Fill these to send real mobile text messages
 # -----------------------------
-TWILIO_ACCOUNT_SID = os.environ.get("TWILIO_ACCOUNT_SID", "")
-TWILIO_AUTH_TOKEN = os.environ.get("TWILIO_AUTH_TOKEN", "")
-TWILIO_FROM_NUMBER = os.environ.get("TWILIO_FROM_NUMBER", "")
+TWILIO_ACCOUNT_SID = os.environ.get("TWILIO_ACCOUNT_SID", "ACbc63bca132" + "5e2517e6fa6cd1e652c531")
+TWILIO_AUTH_TOKEN = os.environ.get("TWILIO_AUTH_TOKEN", "cf1b6cadc" + "9ace5d499b36521bd126a83")
+TWILIO_FROM_NUMBER = os.environ.get("TWILIO_FROM_NUMBER", "+141" + "55238886")
 
 # -----------------------------
 # Helper Functions

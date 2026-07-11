@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AttendIQ Assistant</title>
+
+<link rel="stylesheet"
+href="{{ url_for('static', filename='css/style.css') }}">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="analytics-container">
+
+<div class="analytics-card">
+
+<div class="success-icon">
+
+✅
+
+</div>
+
+<h1>Attendance Recorded!</h1>
+
+<p class="subtitle">
+
+Welcome {{ student.name }}
+
+</p>
+
+<hr>
+
+<div class="assistant-title">
+
+🤖 AttendIQ Assistant
+
+</div>
+
+<p class="assistant-sub">
+
+Personalized attendance insights
+
+</p>
+
+<div class="attendance-card">
+
+<div>
+
+<p>Current Attendance</p>
+
+<h2>{{ attendance }}%</h2>
+
+</div>
+
+<div class="circle">
+
+{{ attendance }}%
+
+</div>
+
+</div>
+
+<div class="stats">
+
+<div class="stat">
+
+<h3>📅</h3>
+
+<p>You can miss</p>
+
+<h2>{{ remaining }}</h2>
+
+<span>more classes</span>
+
+</div>
+
+<div class="stat">
+
+<h3>📉</h3>
+
+<p>If you miss tomorrow</p>
+
+<h2>{{ attendance_if_miss }}%</h2>
+
+<span>estimated</span>
+
+</div>
+
+</div>
+
+<div class="recommendation">
+
+<h3>💡 AI Recommendation</h3>
+
+<p>
+
+{{ message }}
+
+</p>
+
+</div>
+
+{% if phone %}
+<div class="sms-notification-card">
+    <div class="sms-header">
+        <span class="sms-icon">📲</span>
+        <span class="sms-title">WhatsApp Notification Dispatched</span>
+    </div>
+    <div class="sms-body">
+        <p class="sms-to">To WhatsApp Number: <b>{{ phone }}</b></p>
+        <div class="sms-bubble">
+            {{ message_text }}
+        </div>
+        <p class="sms-status">🟢 Sent successfully via AttendIQ WhatsApp Gateway</p>
+        <p style="margin-top: 10px; font-size: 13px; color: #64748b;">⏳ Auto-redirecting to WhatsApp in 3 seconds to send message...</p>
+        
+        <a href="{{ whatsapp_url }}" target="_blank" class="whatsapp-btn">
+            📲 Open in WhatsApp Chat
+        </a>
+    </div>
+</div>
+{% endif %}
+
+<a href="/" class="home-btn">
+
+🏠 Back to Home
+
+</a>
+
+</div>
+
+</div>
+
+<script>
+    // Auto-redirect to WhatsApp to draft the text message instantly
+    setTimeout(() => {
+        const whatsappUrl = "{{ whatsapp_url }}";
+        if (whatsappUrl && whatsappUrl !== "") {
+            window.location.href = whatsappUrl;
+        }
+    }, 3000);
+</script>
+
+</body>
+
+</html>

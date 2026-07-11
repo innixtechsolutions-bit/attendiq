@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AttendIQ Dashboard</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <div class="sidebar">
+
+        <h2>AttendIQ</h2>
+
+        <ul>
+
+            <li class="active">Dashboard</li>
+            <li>Attendance</li>
+            <li>Students</li>
+            <li>Reports</li>
+
+        </ul>
+
+    </div>
+
+    <div class="main">
+
+        <div class="topbar">
+
+            <h1>Teacher Dashboard</h1>
+
+            <div class="profile">
+
+                👨‍🏫 Admin
+
+            </div>
+
+        </div>
+
+        <div class="cards">
+
+            <div class="card-small">
+
+                <h3>Session Status</h3>
+
+                <p id="status">Inactive 🔴</p>
+
+            </div>
+
+            <div class="card-small">
+
+                <h3>Time Remaining</h3>
+
+                <p id="timer">05:00</p>
+
+            </div>
+
+            <div class="card-small">
+
+                <h3>Present Students</h3>
+
+                <p id="count">{{ present }}</p>
+
+            </div>
+
+        </div>
+
+        <div class="qr-section">
+
+            <div class="qr-card">
+
+                <h2>Dynamic QR Code</h2>
+
+                <img
+                id="qr"
+                src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=AttendIQ">
+
+                <button onclick="startAttendance()">
+
+                    Start Attendance
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    const localIp = "{{ local_ip }}";
+</script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AttendIQ</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/6c7b3f2d2b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">
+        AttendIQ
+    </div>
+
+    <ul>
+
+        <li><a href="/">Home</a></li>
+
+        <li><a href="/teacher">Teacher Portal</a></li>
+
+        <li><a href="/student">Student Portal</a></li>
+
+    </ul>
+
+</nav>
+
+<section class="hero">
+
+    <div class="left">
+
+        <h1>
+            Smart QR Attendance
+            <span>Management System</span>
+        </h1>
+
+        <p>
+
+            Secure attendance using dynamic QR codes,
+            intelligent attendance insights,
+            and real-time attendance tracking.
+
+        </p>
+
+        <div class="buttons">
+
+            <a href="/teacher" class="primary">
+                Teacher Portal
+            </a>
+
+            <a href="/student" class="secondary">
+                Student Portal
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="right">
+
+        <div class="flow-card">
+
+            <h3>How AttendIQ Works</h3>
+
+            <div class="flow">
+
+                <div>👨‍🏫 Teacher Starts Session</div>
+
+                <span>↓</span>
+
+                <div>⚡ Dynamic QR Generated</div>
+
+                <span>↓</span>
+
+                <div>📱 Students Scan QR</div>
+
+                <span>↓</span>
+
+                <div>✅ Attendance Recorded</div>
+
+                <span>↓</span>
+
+                <div>🤖 AttendIQ Assistant</div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="features">
+
+    <div class="feature">
+
+        <h3>⚡ Dynamic QR</h3>
+
+        <p>QR code refreshes every 5 seconds.</p>
+
+    </div>
+
+    <div class="feature">
+
+        <h3>⏱ 5 Minute Session</h3>
+
+        <p>Attendance closes automatically.</p>
+
+    </div>
+
+    <div class="feature">
+
+        <h3>🤖 AI Assistant</h3>
+
+        <p>Attendance insights after successful check-in.</p>
+
+    </div>
+
+</section>
+
+<footer>
+
+    © 2026 AttendIQ • Smart QR Attendance Management System • Built by Vinitha Sri T, BSc Computer Technology(24BCT062), SKASC.
+
+</footer>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>

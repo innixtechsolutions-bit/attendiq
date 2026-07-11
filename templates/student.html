@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Student Attendance</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</head>
+
+<body>
+
+<div class="student-container">
+
+    <div class="student-card">
+
+        <h1>AttendIQ</h1>
+
+        <p>Student Attendance</p>
+
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <form action="/submit" method="POST">
+
+            <input
+            type="text"
+            name="name"
+            placeholder="Full Name"
+            required>
+
+            <input
+            type="text"
+            name="roll"
+            placeholder="Roll Number"
+            required>
+
+            <input
+            type="text"
+            name="phone"
+            placeholder="WhatsApp Number (e.g. +919876543210)"
+            required>
+            <button type="button" id="verifyBtn" onclick="verifyWifi()">
+                📶 Verify College Wi-Fi
+            </button>
+
+<p id="wifiStatus"></p>
+            <button type="submit" id="attendanceBtn" disabled>
+                Mark Attendance
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

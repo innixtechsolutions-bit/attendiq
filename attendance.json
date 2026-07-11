@@ -23,6 +23,18 @@
             "attended": 17,
             "total": 22,
             "phone": "+919344570165"
+        },
+        "24BCT045": {
+            "name": "Sakthi",
+            "attended": 17,
+            "total": 22,
+            "phone": "+919385886511"
+        },
+        "24BCT050": {
+            "name": "Shreya",
+            "attended": 17,
+            "total": 22,
+            "phone": "+917845911944"
         }
     },
     "today": []

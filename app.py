@@ -47,9 +47,18 @@ def save_data(data):
         json.dump(data, file, indent=4)
 
 def send_whatsapp(to_number, message_body):
-    # Normalize phone format
-    if not to_number.startswith("+"):
-        to_number = "+" + to_number
+    # Normalize phone format: automatically prefix +91 for 10-digit Indian numbers
+    to_number_clean = to_number.strip().replace(" ", "").replace("-", "").replace("(", "").replace(")", "")
+    if to_number_clean.startswith("+"):
+        pass
+    elif to_number_clean.startswith("91") and len(to_number_clean) == 12:
+        to_number_clean = "+" + to_number_clean
+    elif len(to_number_clean) == 10:
+        to_number_clean = "+91" + to_number_clean
+    else:
+        if not to_number_clean.startswith("+"):
+            to_number_clean = "+" + to_number_clean
+    to_number = to_number_clean
 
     print(f"\n======================================")
     print(f"[WhatsApp] MOCK SENDING MESSAGE TO: {to_number}")

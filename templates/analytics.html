@@ -119,11 +119,6 @@ Personalized attendance insights
             {{ message_text }}
         </div>
         <p class="sms-status">🟢 Sent successfully via AttendIQ WhatsApp Gateway</p>
-        <p style="margin-top: 10px; font-size: 13px; color: #64748b;">⏳ Auto-redirecting to WhatsApp in 3 seconds to send message...</p>
-        
-        <a href="{{ whatsapp_url }}" target="_blank" class="whatsapp-btn">
-            📲 Open in WhatsApp Chat
-        </a>
     </div>
 </div>
 {% endif %}
@@ -137,16 +132,6 @@ Personalized attendance insights
 </div>
 
 </div>
-
-<script>
-    // Auto-redirect to WhatsApp to draft the text message instantly
-    setTimeout(() => {
-        const whatsappUrl = "{{ whatsapp_url }}";
-        if (whatsappUrl && whatsappUrl !== "") {
-            window.location.href = whatsappUrl;
-        }
-    }, 3000);
-</script>
 
 </body>
 

@@ -148,8 +148,8 @@ def student():
 @app.route("/submit", methods=["POST"])
 def submit():
 
-    name = request.form["name"]
-    roll = request.form["roll"]
+    name = request.form["name"].strip()
+    roll = request.form["roll"].strip().upper()
 
     data = load_data()
 
@@ -199,6 +199,7 @@ def analytics():
     if roll is None:
         return redirect(url_for("student"))
 
+    roll = roll.strip().upper()
     data = load_data()
 
     if roll not in data["students"]:

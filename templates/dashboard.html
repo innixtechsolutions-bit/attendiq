@@ -85,6 +85,8 @@
                 id="qr"
                 src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=AttendIQ">
 
+                <p id="qrUrl" style="font-size:11px;word-break:break-all;color:#888;margin:6px 0 10px;"></p>
+
                 <button onclick="startAttendance()">
 
                     Start Attendance
@@ -103,6 +105,13 @@
     const localIp = "{{ local_ip }}";
 </script>
 <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+<script>
+    // Auto-start attendance session as soon as the dashboard loads
+    // so the QR code is always ready — teacher doesn't need to click anything
+    window.addEventListener('DOMContentLoaded', function() {
+        startAttendance();
+    });
+</script>
 
 </body>
 

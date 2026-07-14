@@ -21,7 +21,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Package lock (optional to ignore)
+# Node.js package files (not needed for this Python project)
+package.json
 package-lock.json
 
 # Environment / secrets
